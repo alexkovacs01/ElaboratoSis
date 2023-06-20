@@ -1,0 +1,18 @@
+.model COMPARATORE
+.inputs A7 A6 A5 A4 A3 A2 A1 A0 B7 B6 B5 B4 B3 B2 B1 B0
+.outputs OUT
+.subckt XNOR A=A7 B=B7 OUT=X7
+.subckt XNOR A=A6 B=B6 OUT=X6
+.subckt XNOR A=A5 B=B5 OUT=X5
+.subckt XNOR A=A4 B=B4 OUT=X4
+.subckt XNOR A=A3 B=B3 OUT=X3
+.subckt XNOR A=A2 B=B2 OUT=X2
+.subckt XNOR A=A1 B=B1 OUT=X1
+.subckt XNOR A=A0 B=B0 OUT=X0
+
+.names X7 X6 X5 X4 X3 X2 X1 X0 OUT
+11111111 1
+
+.search XNOR.blif
+
+.end

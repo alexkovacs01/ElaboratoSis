@@ -1,0 +1,123 @@
+.model FSM
+.inputs A10 A9 A8 A7 A6 A5 A4 A3 A2 A1 A0
+.outputs O5 O4 O3 O2 O1 O0
+.latch    O2 LatchOut_v11   0
+.latch    [25] LatchOut_v12   1
+.latch    [26] LatchOut_v13   1
+.start_kiss
+.i 11
+.o 6
+.p 31
+.s 5
+.r RESET
+0---------- ERRORE ERRORE 010000
+1---------- ERRORE RESET 000000
+011110---1- RESET ERRORE 010011
+011110--1-- RESET ERRORE 010011
+011110-1--- RESET ERRORE 010011
+0111101---- RESET ERRORE 010011
+011111----- RESET ERRORE 010011
+010--0----- RESET ACIDO 000111
+0100-1----- RESET ACIDO 000111
+010101----- RESET ACIDO 000111
+1---------- RESET RESET 000000
+00--------- RESET RESET 000000
+010111----- RESET FINE 100011
+0110000000- RESET FINE 100011
+011000---1- RESET BASICO 001011
+011000--1-- RESET BASICO 001011
+011000-1--- RESET BASICO 001011
+0110001---- RESET BASICO 001011
+011001----- RESET BASICO 001011
+01101------ RESET BASICO 001011
+011100----- RESET BASICO 001011
+011101----- RESET BASICO 001011
+0111100000- RESET BASICO 001011
+0---------0 ACIDO ACIDO 000101
+1---------- ACIDO RESET 000000
+0---------1 ACIDO FINE 100001
+1---------- FINE RESET 000000
+0---------- FINE FINE 100000
+0---------0 BASICO BASICO 001010
+1---------- BASICO RESET 000000
+0---------1 BASICO FINE 100010
+.end_kiss
+.latch_order LatchOut_v11 LatchOut_v12 LatchOut_v13
+.code ERRORE 010
+.code RESET 011
+.code ACIDO 100
+.code FINE 001
+.code BASICO 000
+.names A8 A0 [25] LatchOut_v12 LatchOut_v13 [30] [31] O5
+-100--- 1
+--0-1-1 1
+1-0-10- 1
+.names A10 A9 A8 LatchOut_v12 LatchOut_v13 [24] [27] O4
+0--10-- 1
+0111-10 1
+.names A8 O5 O0 [25] LatchOut_v12 [30] O3
+-000-- 1
+1--011 1
+.names A10 A8 A0 LatchOut_v11 [31] [34] O2
+0-01-- 1
+00--01 1
+.names O0 [25] LatchOut_v13 [34] O1
+1--1 1
+000- 1
+.names A10 LatchOut_v11 LatchOut_v12 [34] O0
+01-- 1
+0-11 1
+.names A10 A9 LatchOut_v12 O4 [25]
+1--- 1
+---1 1
+-01- 1
+.names [25] O5 O4 [26]
+-1- 1
+1-0 1
+.names A5 A4 A3 A2 A1 [24]
+1---- 1
+-1--- 1
+--1-- 1
+---1- 1
+----1 1
+.names A7 A6 [27]
+0- 1
+-0 1
+.names A7 A6 [24] [30]
+1-- 1
+-1- 1
+--1 1
+.names A5 LatchOut_v12 [27] [31]
+-0- 1
+1-0 1
+.names A9 LatchOut_v13 [34]
+11 1
+.exdc 
+.inputs A10 A9 A8 A7 A6 A5 A4 A3 A2 A1 A0 LatchOut_v11 LatchOut_v12 \
+LatchOut_v13
+.outputs [25] [26] O5 O4 O3 O2 O1 O0
+.names LatchOut_v11 LatchOut_v12 LatchOut_v13 [25]
+11- 1
+1-1 1
+.names LatchOut_v11 LatchOut_v12 LatchOut_v13 [26]
+11- 1
+1-1 1
+.names LatchOut_v11 LatchOut_v12 LatchOut_v13 O5
+11- 1
+1-1 1
+.names LatchOut_v11 LatchOut_v12 LatchOut_v13 O4
+11- 1
+1-1 1
+.names LatchOut_v11 LatchOut_v12 LatchOut_v13 O3
+11- 1
+1-1 1
+.names LatchOut_v11 LatchOut_v12 LatchOut_v13 O2
+11- 1
+1-1 1
+.names LatchOut_v11 LatchOut_v12 LatchOut_v13 O1
+11- 1
+1-1 1
+.names LatchOut_v11 LatchOut_v12 LatchOut_v13 O0
+11- 1
+1-1 1
+.end
